@@ -1,7 +1,7 @@
 PROXY = ""
 EUDIC_TOKEN = ""
 EUDIC_ID = "0"
-DECK_NAME = "anki_packager"
+DECK_NAME = "COCA20000Pack"
 
 [[MODEL_PARAM]]
 model = "ollama/gemma3:27b"
