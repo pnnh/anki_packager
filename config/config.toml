@@ -4,9 +4,14 @@ EUDIC_ID = "0"
 DECK_NAME = "anki_packager"
 
 [[MODEL_PARAM]]
-model = "gemini/gemini-2.5-flash"
-api_key = "GEMINI_API_KEY"
+model = "ollama/gemma3:27b"
+api_base = "http://localhost:11434"
 rpm = 10                          # 每分钟请求次数
+
+#[[MODEL_PARAM]]
+#model = "gemini/gemini-2.5-flash"
+#api_key = "GEMINI_API_KEY"
+#rpm = 10                          # 每分钟请求次数
 
 # [[MODEL_PARAM]]
 # model = "openai/gpt-4o"

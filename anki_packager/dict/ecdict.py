@@ -2,7 +2,7 @@ import os
 import sqlite3
 
 from anki_packager.logger import logger
-from anki_packager.utils import get_user_config_dir
+from anki_packager.utils import get_config_dir
 
 from anki_packager.dict import stardict
 
@@ -13,7 +13,7 @@ from mdict_utils.utils import ElapsedTimer
 
 class Ecdict:
     def __init__(self):
-        self.config_dir = get_user_config_dir()
+        self.config_dir = get_config_dir()
         self.dicts_dir = os.path.join(self.config_dir, "dicts")
         # keep the package archive small
         self.seven_zip = os.path.join(self.dicts_dir, "stardict.7z")
@@ -81,7 +81,7 @@ class Ecdict:
         """
         with ElapsedTimer(verbose=False):
             mdx_path = os.path.join(
-                get_user_config_dir(),
+                get_config_dir(),
                 "dicts",
                 "单词释义比例词典-带词性.mdx",
             )
@@ -93,7 +93,7 @@ class Ecdict:
     def get_diffrentiation(self, data):
         """[《有道词语辨析》加强版](https://skywind.me/blog/archives/2941)"""
         with ElapsedTimer(verbose=False):
-            mdx_path = os.path.join(get_user_config_dir(), "dicts", "有道词语辨析.mdx")
+            mdx_path = os.path.join(get_config_dir(), "dicts", "有道词语辨析.mdx")
             record = query(mdx_path, data["word"])
             if record:
                 data["diffrentiation"] = record

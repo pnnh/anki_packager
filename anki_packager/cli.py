@@ -7,7 +7,7 @@ from tqdm.asyncio import tqdm
 import signal
 
 ### config
-from anki_packager.utils import get_user_config_dir
+from anki_packager.utils import get_config_dir
 
 ### logger
 from anki_packager.logger import logger
@@ -100,7 +100,7 @@ async def main():
     options = parser.parse_args()
 
     ### set config according to config directory or parsed arguments
-    config_dir = get_user_config_dir()
+    config_dir = get_config_dir()
     config_path = os.path.join(config_dir, "config")
 
     ## 1. read config.toml
